@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Props</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f2f5;
+        padding: 20px;
+      }
+      #root {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .project-card {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        width: 300px;
+      }
+      .project-card h3 {
+        color: #2c3e50;
+        margin-top: 0;
+      }
+      .project-card .technologies {
+        font-style: italic;
+        color: #3498db;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      const rootElement = document.getElementById("root");
+      const root = ReactDOM.createRoot(rootElement);
+
+      // ЗАВДАННЯ 1: Створи тут свій компонент ProjectCard
+      // Він має приймати props (title, description, technologies)
+      // і повертати JSX-розмітку для картки проєкту.
+      // function ProjectCard(props) { ... }
+
+      // Головний компонент
+      function App() {
+        return (
+          // ЗАВДАННЯ 2: Виклич тут свій компонент ProjectCard двічі з різними даними
+          <div>
+            <h1>Мої React Проєкти</h1>
+            {/* Приклад виклику: 
+          <ProjectCard 
+            title="Назва першого проєкту"
+            description="Опис першого проєкту."
+            technologies={["React", "JSX"]}
+          /> 
+          */}
+          </div>
+        );
+      }
+
+      root.render(<App />);
+    </script>
+  </body>
+</html>
