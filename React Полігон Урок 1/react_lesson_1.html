@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Мій перший React Додаток</title>
+    <style>
+      /* Прості стилі для центрування */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        background-color: #f0f2f5;
+      }
+      #root {
+        background-color: white;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Це "корінь" нашого React-додатку. React буде вставляти весь HTML сюди. -->
+    <div id="root"></div>
+
+    <!-- 1. Підключаємо бібліотеку React -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <!-- 2. Підключаємо бібліотеку ReactDOM, яка вміє працювати з DOM -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- 3. Підключаємо Babel. Він буде "на льоту" перетворювати наш JSX на зрозумілий для браузера JavaScript -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- 4. Наш React-код! Зверни увагу на type="text/babel" -->
+    <script type="text/babel">
+      // Знаходимо кореневий елемент в HTML
+      const rootElement = document.getElementById("root");
+
+      // Створюємо "корінь" для React
+      const root = ReactDOM.createRoot(rootElement);
+
+      // Це наш перший React-компонент.
+      // Це звичайна JavaScript-функція, яка повертає JSX.
+      function App() {
+        // ЗАВДАННЯ: Зміни JSX-розмітку тут
+        return (
+          <div>
+            <h1>Привіт, Сергію! Я вивчаю React!</h1>
+            <p>Це мій перший компонент.</p>
+          </div>
+        );
+      }
+
+      // Кажемо React: "Будь ласка, відрендери (намалюй) компонент <App /> всередині нашого кореня"
+      root.render(<App />);
+    </script>
+  </body>
+</html>
