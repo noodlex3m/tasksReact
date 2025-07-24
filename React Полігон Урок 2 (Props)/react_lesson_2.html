@@ -10,11 +10,6 @@
         background-color: #f0f2f5;
         padding: 20px;
       }
-      #root {
-        display: flex;
-        gap: 20px;
-        flex-wrap: wrap;
-      }
       .project-card {
         background-color: white;
         border: 1px solid #ddd;
@@ -45,6 +40,20 @@
       const root = ReactDOM.createRoot(rootElement);
 
       // ЗАВДАННЯ 1: Створи тут свій компонент ProjectCard
+      function ProjectCard(props) {
+        return (
+          <div className="project-card">
+            <h3>{props.title}</h3>
+            <p>{props.description}</p>
+            <p>
+              <strong>Технології: </strong>{" "}
+              <span className="technologies">
+                {props.technologies.join(", ")}
+              </span>
+            </p>
+          </div>
+        );
+      }
       // Він має приймати props (title, description, technologies)
       // і повертати JSX-розмітку для картки проєкту.
       // function ProjectCard(props) { ... }
@@ -54,18 +63,29 @@
         return (
           // ЗАВДАННЯ 2: Виклич тут свій компонент ProjectCard двічі з різними даними
           <div>
-            <h1>Мої React Проєкти</h1>
-            {/* Приклад виклику: 
-          <ProjectCard 
-            title="Назва першого проєкту"
-            description="Опис першого проєкту."
-            technologies={["React", "JSX"]}
-          /> 
-          */}
+            <h1 style={{ textAlign: "center" }}>Мої React Проєкти</h1>
+            <div
+              style={{
+                display: "flex",
+                gap: "20px",
+                flexWrap: "wrap",
+                justifyContent: "center",
+              }}
+            >
+              <ProjectCard
+                title="Сайт-портфоліо"
+                description="Мій особистий сайт, який ви зараз переглядаєте. Створений для демонстрації навичок та інформації про мене."
+                technologies={["HTML, CSS, JavaScript, React, JSX"]}
+              />
+              <ProjectCard
+                title="Інтернет-магазин 'TechWorld'"
+                description="Концепт інтернет-магазину. На даний момент у стадії планування та розробки архітектури."
+                technologies={["HTML, CSS, JavaScript, React, JSX, SQL"]}
+              />
+            </div>
           </div>
         );
       }
-
       root.render(<App />);
     </script>
   </body>
