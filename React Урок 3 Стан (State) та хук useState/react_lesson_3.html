@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React State (useState)</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+      }
+      .toggle-switch {
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        text-align: center;
+        transition: background-color 0.3s ease;
+      }
+      .toggle-switch p {
+        font-size: 1.5em;
+        margin-top: 0;
+      }
+      .toggle-switch button {
+        font-size: 1em;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      const rootElement = document.getElementById("root");
+      const root = ReactDOM.createRoot(rootElement);
+
+      // Хук useState доступний глобально в цьому середовищі
+      const { useState } = React;
+
+      // ЗАВДАННЯ: Створи тут свій компонент ToggleSwitch
+      // function ToggleSwitch() { ... }
+
+      // Головний компонент
+      function App() {
+        return (
+          <div>
+            <h1>Віджет-перемикач</h1>
+            {/* Виклич тут свій компонент ToggleSwitch */}
+          </div>
+        );
+      }
+
+      root.render(<App />);
+    </script>
+  </body>
+</html>
