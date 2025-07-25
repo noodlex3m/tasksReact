@@ -46,13 +46,28 @@
 
       // ЗАВДАННЯ: Створи тут свій компонент ToggleSwitch
       // function ToggleSwitch() { ... }
+      function ToggleSwitch() {
+        const [isOn, setIsOn] = useState(false);
+        function handleToggle() {
+          setIsOn(!isOn);
+        }
+        return (
+          <div
+            className="toggle-switch"
+            style={{ backgroundColor: isOn ? "lightgreen" : "lightcoral" }}
+          >
+            <p>{isOn ? "Увімкнено" : "Вимкнено"}</p>
+            <button onClick={handleToggle}>Натисни мене</button>
+          </div>
+        );
+      }
 
       // Головний компонент
       function App() {
         return (
           <div>
             <h1>Віджет-перемикач</h1>
-            {/* Виклич тут свій компонент ToggleSwitch */}
+            <ToggleSwitch />
           </div>
         );
       }
